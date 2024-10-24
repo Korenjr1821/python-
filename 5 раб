@@ -29,44 +29,28 @@ elif operation == "/" :
 else:
     print("Неверная операция")
     exit()
-    
-# Print the result
-print("Результат:", result)
+    print("Результат:", result)
 #задание4
 num = int(input("Введите число:"))
-
-# Check if the number is even and ends with 2 or 6
 if num % 2 == 0 and (num % 10 == 2 or num % 10 == 6):
     print(True)
 else:
     print(False)
 #задание5
-# Set a predefined password
 password= "my_secret_password"
-
-# Get user input for a password
 user_input = input("Введите пароль :")
-
-# Check if the user input matches the predefined password
 if user_input == password:
     print("Доступ разрешен.")
 else:
     print("Неверный пароль.")
 #задание6
-# Define a dictionary to store the square colors
 squares = {
     'A1': 'gray', 'A2': 'blue', 'A3': 'green', 'A4': 'gray',
     'B1': 'blue', 'B2': 'gray', 'B3': 'green', 'B4': 'gray',
-    'C1': 'gray', 'C2': 'green', 'C3': 'blue', 'C4': 'gray',
-    # Add more squares as needed
-}
+    'C1': 'gray', 'C2': 'green', 'C3': 'blue', 'C4': 'gray',}
 
-# Get user input for a square coordinate
 coordinate = input("Введите координаты квадрата: ")
-
-# Check if the coordinate is valid
 if coordinate in squares:
-    # Determine the bird type based on the square color
     if squares[coordinate] == 'blue':
         print("В данном квадрате обитает синий попугай.")
     elif squares[coordinate] == 'green':
@@ -76,39 +60,30 @@ if coordinate in squares:
 else:
     print("Неверные координаты.")
 #задание7
-# Вводим числа n и k с клавиатуры
 n = int(input("Введите число n: "))
 k = int(input("Введите число k: "))
 
-# Проверяем, является ли k равным 0, чтобы избежать деления на ноль
 if k == 0:
     print("Деление на ноль невозможно.")
 else:
-    # Проверяем, кратно ли n числу k
     if n % k == 0:
         print(f"Число {n} кратно числу {k}.")
     else:
         print(f"Число {n} не кратно числу {k}.")
 #задание8
 def check_player_status(level, health):
-    # Проверяем корректность введенных данных
     if level < 0 or health < 0 or health > 100:
         return "Некорректные данные."
 
-    # Проверяем уровень игрока
     if level < 5:
         return "Ваш уровень слишком низкий для выполнения миссии."
     
-    # Проверяем состояние здоровья
     if health > 50:
         return "Вы готовы к миссии!"
     elif 20 <= health <= 50:
         return "Ваше здоровье низкое, будьте осторожны."
     else:
         return "Ваше здоровье слишком низкое для выполнения миссии."
-
-
-# Пример использования
 try:
     player_level = int(input("Введите уровень игрока: "))
     player_health = int(input("Введите состояние здоровья игрока: "))
@@ -117,10 +92,7 @@ try:
 except ValueError:
     print("Некорректные данные.")
 #задание9
-# Изначальный инвентарь игрока
 inventory = ["яблоко", "шариковая ручка"]
-
-# Проверяем наличие необходимых предметов
 def check_inventory(inventory):
     has_key = "ключ" in inventory
     has_flashlight = "фонарь" in inventory
@@ -133,17 +105,12 @@ def check_inventory(inventory):
         return "У вас нет ключа, вы не можете открыть дверь."
     elif not has_flashlight:
         return "У вас нет фонаря, слишком темно, чтобы пройти."
-
-# Проверка инвентаря и вывод результата
 result = check_inventory(inventory)
 print(result)("У вас нет ни ключа, ни фонаря, вы не можете пройти через дверь.")
 #Задание10
-# Фразы персонажей
 king = "Enemies are coming! Are the archers ready?"
 warrior = "For the Alliance!"
 magician = "The spell is ready."
-
-# Функция для проверки знаков в конце строки
 def check_end_character(phrase):
     if phrase.endswith('?'):
         return "В конце фразы есть знак вопроса."
@@ -153,8 +120,6 @@ def check_end_character(phrase):
         return "В конце фразы есть точка."
     else:
         return "В конце фразы нет знаков ?, ! или ."
-
-# Проверка фраз персонажей
 print("Король:", check_end_character(king))
 print("Воин:", check_end_character(warrior))
 print("Маг:", check_end_character(magician))
