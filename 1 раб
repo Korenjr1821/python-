@@ -1,15 +1,12 @@
 #Задние1
-# Создаем переменные с разными типами данных
-integer_var = 42  # целое число
-float_var = 3.14  # число с плавающей запятой
-string_var = "Hello, World!"  # строка
-list_var = [1, 2, 3, 4, 5]  # список чисел
-tuple_var = (1, "text", 3.14, True)  # кортеж с разными типами данных
-dict_var = {"name": "Alice", "age": 30, "city": "Wonderland"}  # словарь с ключами и значениями
-set_var = {1, 2, 3, 4, 5}  # множество уникальных чисел
-bool_var = True  # логическое значение
-
-# Выводим значения на экран
+integer_var = 42  
+float_var = 3.14  
+string_var = "Hello, World!"  
+list_var = [1, 2, 3, 4, 5]  
+tuple_var = (1, "text", 3.14, True)  
+dict_var = {"name": "Alice", "age": 30, "city": "Wonderland"}  
+set_var = {1, 2, 3, 4, 5}  
+bool_var = True  
 print("Целое число:", integer_var)
 print("Число с плавающей запятой:", float_var)
 print("Строка:", string_var)
@@ -20,18 +17,14 @@ print("Множество уникальных чисел:", set_var)
 print("Логическое значение:", bool_var)
 
 #Задание2
-
-# Создаем переменные с информацией о себе
-name = "Alex"  # имя (тип данных str)
-age = 25  # возраст (тип данных int)
-average_grade = 4.5  # средний балл (тип данных float)
-favorite_movies = ["Inception", "The Matrix", "Interstellar", "Pulp Fiction"]  # список любимых фильмов (тип данных list)
-personal_info = ("Smith", 10, average_grade)  # кортеж с фамилией, номером школы и средним баллом (тип данных tuple)
-skills = {"Python": "advanced", "English": "intermediate", "Data Analysis": "beginner"}  # словарь навыков (тип данных dict)
-visited_countries = {"USA", "Canada", "France"}  # множество посещенных стран (тип данных set)
-has_driver_license = True  # логическое значение, есть ли водительские права (тип данных bool)
-
-# Выводим значения на экран
+name = "Alex"  
+age = 25  
+average_grade = 4.5  
+favorite_movies = ["Inception", "The Matrix", "Interstellar", "Pulp Fiction"]  
+personal_info = ("Smith", 10, average_grade)  
+skills = {"Python": "advanced", "English": "intermediate", "Data Analysis": "beginner"}  
+visited_countries = {"USA", "Canada", "France"}  
+has_driver_license = True  
 print("Имя:", name)
 print("Возраст:", age)
 print("Средний балл:", average_grade)
@@ -42,13 +35,8 @@ print("Посещенные страны:", visited_countries)
 print("Есть ли водительские права:", has_driver_license)
 
 #Задание3
-# Создаем переменные с информацией о компьютере
-processor = "Intel Core i7-9700K"  # название процессора
-ram_size = "16 GB"  # объём оперативной памяти
-internet_speed = "100 Mbps"  # скорость интернета
-
-# Создаем массив (список) и добавляем в него все переменные
+processor = "Intel Core i7-9700K" 
+ram_size = "16 GB"  
+internet_speed = "100 Mbps"  
 computer_info = [processor, ram_size, internet_speed]
-
-# Выводим массив на консоль
 print("Информация о компьютере:", computer_info)
