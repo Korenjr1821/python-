@@ -1,0 +1,53 @@
+#Задание1
+m = ['круг', 0.25, 'квадрат', 'треугольник', 15, 'круг', 'овал', '10']
+m.remove(0.25)
+m.remove(15)
+m.remove('10')
+
+print(m)  # ['круг', 'квадрат', 'треугольник', 'круг', 'овал']
+
+#Задание2
+abc = ['A', 'B', 'C', 'D', 'E', 'F', 'G']
+del abc[3:]  
+del abc[1]   
+print(abc) 
+
+#Задание 3
+numbers = [1, 4]
+numbers.insert(1, 2)  
+numbers.insert(2, 3)  
+
+print(numbers)  
+
+
+#Задание 4
+mass = [14, -6, 3, 11, 6, 8.5, 99, -20, -6, 10, 40, 0.25, -4, 5]
+mass = [num for num in mass if num >= 0]
+sorted_ascending = sorted(mass)
+sorted_descending = sorted(mass, reverse=True)
+
+print(sorted_ascending)  
+print(sorted_descending)  
+
+
+#Задание5
+num_count = int(input("Введите количество вводимых чисел: "))
+numbers = [int(input(f"Введите число {i + 1}: ")) for i in range(num_count)]
+negatives = []
+positives = []
+zeros = []
+for number in numbers:
+    if number < 0:
+        negatives.append(number)
+    elif number > 0:
+        positives.append(number)
+    else:
+        zeros.append(number)
+
+neg_sum = sum(negatives)
+pos_avg = sum(positives) / len(positives) if positives else 0
+zeros = ['*' for _ in zeros]
+zero_count = len(zeros)
+print("Сумма отрицательных чисел:", neg_sum)
+print("Среднее арифметическое положительных чисел:", pos_avg)
+print("Количество нулей:", zero_count, "Элементы:", zeros)
