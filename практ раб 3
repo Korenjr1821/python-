@@ -1,0 +1,73 @@
+#Задача1
+minutes = int(input("Введите количество минут: "))
+hours = minutes // 60
+remaining_minutes = minutes % 60
+print(hours)
+print(remaining_minutes)
+
+#Задача2
+a = int(input("Введите минимальное количество часов сна: "))
+b = int(input("Введите максимальное количество часов сна: "))
+h = int(input("Введите количество часов, которые спит Аня: "))
+if h < a:
+    print("Недосып")
+elif h > b:
+    print("Пересып")
+else:
+    print("Это нормально")
+
+#Задача3
+import math
+a = float(input("Введите длину первой стороны: "))
+b = float(input("Введите длину второй стороны: "))
+c = float(input("Введите длину третьей стороны: "))
+s = (a + b + c) / 2
+area = math.sqrt(s * (s - a) * (s - b) * (s - c))
+print("Площадь треугольника:", area)
+
+#Задача4
+room_type = input("Введите тип комнаты (треугольная, прямоугольная, круглая): ").strip().lower()
+
+if room_type == "треугольная":
+    a = float(input("Введите длину первой стороны: "))
+    b = float(input("Введите длину второй стороны: "))
+    c = float(input("Введите длину третьей стороны: "))
+    s = (a + b + c) / 2
+    area = math.sqrt(s * (s - a) * (s - b) * (s - c))
+elif room_type == "прямоугольная":
+    width = float(input("Введите ширину: "))
+    height = float(input("Введите высоту: "))
+    area = width * height
+elif room_type == "круглая":
+    radius = float(input("Введите радиус: "))
+    area = 3.14 * radius * radius
+else:
+    area = None
+    print("Неверный тип комнаты.")
+
+if area is not None:
+    print("Площадь комнаты:", round(area, 2))
+    
+#Задача5
+n = int(input("Введите количество программистов: "))
+
+if n % 10 == 1 and n % 100 != 11:
+    suffix = "программист"
+elif n % 10 in [2, 3, 4] and n % 100 not in [12, 13, 14]:
+    suffix = "программиста"
+else:
+    suffix = "программистов"
+
+print(f"{n} {suffix}")
+
+#Задача6
+ticket = input("Введите номер билета (6 цифр): ")
+if len(ticket) != 6 or not ticket.isdigit():
+    print("Ввод должен содержать 6 цифр.")
+else:
+    first_half_sum = sum(int(digit) for digit in ticket[:3])
+    second_half_sum = sum(int(digit) for digit in ticket[3:])
+    if first_half_sum == second_half_sum:
+        print("Счастливый")
+    else:
+        print("Нек счастливый")
