@@ -1,52 +1,30 @@
 notebook = {}
-
-def add_note():
-    global notebook
-    title = input("Header: ")
-    text = input("Text: ")
-    notebook[title] = text
-    print("Note added.")
-
-def read_notes():
-    global notebook
-    if not notebook:
-        print("Заметок нет.")
-        return
-    print(", ".join(notebook.keys()))
-    title = input("Which note to read? ")
-    if title in notebook:
-        print(notebook[title])
-    else:
-        print("Такой заметки нет.")
-
-def delete_note():
-    global notebook
-    if not notebook:
-        print("Заметок нет.")
-        return
-    print(", ".join(notebook.keys()))
-    title = input("Which note to delete? ")
-    if title in notebook:
-        notebook.pop(title)
-        print(f"Note {title} removed.")
-    else:
-        print("Такой заметки нет.")
-
-def menu():
-    while True:
-        print("[1] - Create a new note.")
-        print("[2] - Read all notes.")
-        print("[3] - Delete entry.")
-        print("[4] - Exit.")
-        choice = input("> ")
-        if choice == '1':
-            add_note()
-        elif choice == '2':
-            read_notes()
-        elif choice == '3':
-            delete_note()
-        elif choice == '4':
-            print("Exiting program.")
-            break
+while True:
+    key = ""
+    val = ""
+    keys = []
+    for i in notebook:
+        keys.append(i)
+    print("[1] - Создать запись. [2] - Прочесть запись. [3] - Удалить  запись. [4] - Выход.")
+    user = input()
+    if user == "1":
+        key = input("Введите название записи: ")
+        val = input(f"Введите запись {key}\n")
+        notebook[key] = val
+    elif user == "2":
+        key = input(f"Какую запись прочесть: {keys}\n")
+        if key in keys:
+            print(notebook[key])
         else:
-            print("Некорректный выбор, попробуйте снова.")
+            print("Неверное название записи")
+    elif user == "3":
+        key = input(f"Какую запись удалить: {keys}\n")
+        if key in keys:
+            notebook.pop(key)
+        else:
+            print("Неверное название записи")
+    elif user == "4":
+        break
+    else:
+        print("Неверный ввод!")
+    keys.clear()
