@@ -1,0 +1,77 @@
+#Задание1
+def upper(t):
+    uppercase_letters =[]
+    for char in t:
+        uppercase_letters.append(char)
+        if uppercase_letters:
+            print(''.join(uppercase_letters))
+            upper('PriVet')
+
+#Задание2
+def punct(txt):
+    punctuation_marks = '!?.(),'
+    count =0
+    for char in txt:
+        if char in punctuation_marks:
+            count += 1 
+            if count > 0:
+                print(count)
+                punct('(Как дела?)')
+
+#Задание3
+def create_cube(x, y):
+    for _ in range(y):
+        print('*' * x)
+        create_cube(5, 3)
+
+#Задание4
+def double(string: str) -> str:
+    out = ""
+    for i in string:
+        out += i * 2
+    print(out)
+
+
+double("строка")
+
+#Задание5
+def constructor(a: int, b: int, c: int, d: int) -> int:
+    a = a // 72
+    b = b // 4
+    c = c // 2
+    d = d // 7
+    return min(a, b, c, d)
+
+
+print(constructor(144, 8, 4, 14))
+
+#Задание6
+def create_list(len: int, num: int) -> list:
+    out = []
+    for i in range(len):
+        out.append(num)
+    return out
+
+
+print(create_list(5, 3))
+
+def cust_filter(inp: list) -> bool:
+    summ = 0
+    for i in inp:
+        if isinstance(i, int) and i % 7 == 0:
+            summ += i
+    if summ < 83:
+        return True
+    else:
+        return False
+
+
+print(cust_filter([7, 10.5, "txt", 14, 2, 56]))
+
+#Задание 8
+def square(x, y):
+    for i in range(1, x + 1):
+        row = ''.join([f"|{j}|" for j in range(1, y + 1)])
+        print(row)
+
+square(2,3)
