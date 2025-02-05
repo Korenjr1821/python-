@@ -1,0 +1,137 @@
+Задание1
+class Create_Personage:
+    def __init__(self, name_pers, class_pers, hp_pers, damage_pers):
+        self.name_pers = name_pers
+        self.class_pers = class_pers
+        self.hp_pers = hp_pers
+        self.damage_pers = damage_pers
+
+    def print_info(self):
+        print(f"Имя: {self.name_pers}")
+        print(f"Класс: {self.class_pers}")
+        print(f"Жизни: {self.hp_pers}")
+        print(f"Урон: {self.damage_pers}")
+
+    def go_on_a_trip(self):
+        print(f"Персонаж {self.name_pers} отправился в путешествие и пока недоступен.")
+
+    def go_back(self):
+        print(f"Персонаж {self.name_pers} возвращается назад.")
+
+    def start_training(self):
+        print(f"Персонаж {self.name_pers} начал тренировку. Некоторое время он не будет доступен, однако станет сильнее!")
+        self.hp_pers += 3 
+        self.damage_pers += 5 
+
+    def start_the_battle(self):
+        print(f"Персонаж {self.name_pers} хочет начать сражаться!")
+        print(f"Его показатели: Жизни: {self.hp_pers} и урон: {self.damage_pers}")
+
+pers_1 = Create_Personage("Игорь", "Боец", 99, 15)
+
+pers_1.print_info()  
+pers_1.go_on_a_trip()  
+pers_1.go_back()  
+pers_1.start_training()  
+pers_1.print_info()  
+pers_1.start_the_battle() 
+
+Задание2
+class Room:
+
+    def __init__(self, name):
+        self.name = name
+        self.items = []
+
+    def print_items(self):
+        print(f"Все предметы в комнате {self.name}: {', '.join(self.items)}")
+
+    def add_item(self, *item):
+        self.items.extend(item)
+
+    def del_item(self, item):
+        if item in self.items:
+            self.items.remove(item)
+            print(f"Все предметы в комнате: {', '.join(self.items)}")
+        else:
+            print("Такого предмета нет в комнате")
+
+    def find_item(self, item):
+        if item in self.items:
+            print("Такой предмет есть в комнате")
+        else:
+            print("Такого предмета нет в комнате")
+
+    def count_items(self):
+        print(f"В комнате {len(self.items)} предметов")
+
+    def clear_items(self):
+        self.items = []
+
+    def replace_item(self, old_item, new_item):
+        if old_item in self.items:
+            self.items.remove(old_item)
+            self.items.append(new_item)
+            print(f"Предмет {old_item} заменён на {new_item}")
+        else:
+            print("Такого предмета нет в комнате")
+
+    def move_item_to(self, item, another_room):
+        if item in self.items:
+            self.items.remove(item)
+            another_room.items.append(item)
+            print(f"Предмет {item} перенесён в {another_room.name}")
+        else:
+            print("Такого предмета нет в комнате")
+
+
+room1 = Room("Кухня")
+room2 = Room("Ванная")
+room1.add_item("Холодильник", "Стул", "Стол")
+room1.move_item_to("Холодильник", room2)
+room1.print_items()
+room2.print_items()
+
+Задание3
+class Car:
+    def __init__(self, make, model, mileage, year):
+        self.make = make               
+        self.model = model              
+        self.mileage = mileage         
+        self.year = year                
+
+    def show_info(self):
+        print(f"Марка: {self.make}")
+        print(f"Модель: {self.model}")
+        print(f"Пробег: {self.mileage} км")
+        print(f"Год выпуска: {self.year}")
+
+    def update_mileage(self, new_mileage):
+        if new_mileage >= self.mileage:
+            self.mileage = new_mileage
+            print(f"Пробег обновлён на {self.mileage} км.")
+        else:
+            print("Новый пробег должен быть больше или равен текущему.")
+
+    def is_new(self):
+        if self.mileage < 10000:
+            print(f"{self.make} {self.model} является новым автомобилем.")
+            return True
+        else:
+            print(f"{self.make} {self.model} не является новым автомобилем.")
+            return False
+
+car1 = Car("Toyota", "Camry", 5000, 2021)
+car2 = Car("Ford", "Focus", 15000, 2018)
+
+car1.show_info()
+print()
+car2.show_info()
+print()
+
+car1.update_mileage(6000)
+car2.update_mileage(14000)  
+print()
+
+car1.is_new()
+car2.is_new()
